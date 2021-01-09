@@ -19,21 +19,23 @@ export default {
   name: 'AvBlogPaginator',
   computed: {
     paginatorCurrent() {
-      return this.$route.query.page || 1
+      return parseInt(this.$route.query.page) || 1
     },
     maxPages() {
       return this.$store.state.blog.maxPages
     },
     paginatorPrevious() {
-      return this.canMoveLeft ? '/' : `/?page=${this.paginatorCurrent - 1}`
+      return this.paginatorCurrent > 2
+        ? `/?page=${this.paginatorCurrent - 1}`
+        : '/'
     },
     paginatorLast() {
-      return this.canMoveRight ? `/?page=${this.maxPages}` : null
+      return `/?page=${this.maxPages}`
     },
     paginatorNext() {
       return this.canMoveRight
-        ? this.paginatorLast
-        : `/?page=${this.paginatorCurrent + 1}`
+        ? `/?page=${this.paginatorCurrent + 1}`
+        : this.paginatorLast
     },
     canMoveLeft() {
       return this.paginatorCurrent >= 2
@@ -66,8 +68,3 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-button {
-  @apply disabled:cursor-not-allowed disabled:text-gray-300 disabled:bg-gray-500;
-}
-</style>

@@ -1,6 +1,6 @@
 <template>
-  <div v-if="data.length >= 1">
-    <av-blog-index v-for="el in data" :key="el.slug" :data="el" />
+  <div v-if="page && page.length && page.length >= 1">
+    <av-blog-index v-for="el in page" :key="el.slug" :data="el" />
     <av-blog-paginator />
   </div>
 </template>
@@ -18,14 +18,22 @@ export default {
 
     next()
   },
-  data() {
-    return {
-      isMoreOpened: false,
-    }
-  },
   computed: {
-    data() {
-      return this.$store.getters['blog/getPage'](this.$route.query.page || 1)
+    page() {
+      return this.$store.getters['blog/getPage'](this.currentPageNumber) || null
+    },
+    currentPageNumber() {
+      return parseInt(this.$route.query.page) || 1
+    },
+    maxPages() {
+      return this.$store.state.blog.maxPages
+    },
+  },
+  watch: {
+    maxPages(n) {
+      if (this.currentPageNumber > n) {
+        this.$router.push('/')
+      }
     },
   },
   head: {

@@ -1,6 +1,6 @@
 export const state = () => ({
   content: [],
-  maxPages: 1,
+  maxPages: 0,
 })
 
 export const mutations = {
@@ -25,7 +25,9 @@ export const actions = {
 
 export const getters = {
   getPost: (state) => (slug) => {
-    return state.content.find((el) => el.slug === slug)
+    return state.content.length > 0
+      ? state.content.find((el) => el.slug === slug)
+      : 404
   },
   getPage: (state) => (pageNum) => {
     const index = (pageNum - 1) * 10

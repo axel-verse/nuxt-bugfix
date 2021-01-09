@@ -9,8 +9,23 @@
 export default {
   computed: {
     post() {
-      return this.$store.getters['blog/getPost'](this.$route.params.slug)
+      return this.$store.getters['blog/getPost'](this.slug)
     },
+    slug() {
+      return this.$route.params.slug
+    },
+  },
+  watch: {
+    post(n) {
+      if (!n) {
+        this.$router.push('/')
+      }
+    },
+  },
+  mounted() {
+    if (!this.slug) {
+      this.$router.push('/')
+    }
   },
   head() {
     return {
