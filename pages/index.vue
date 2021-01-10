@@ -1,29 +1,53 @@
 <template>
-  <div
-    class="grid grid-cols-3 grid-rows-2 gap-10 h-full auto-rows-max container mx-auto mt-10"
-  >
+  <div class="promoted-wrapper">
     <div
       v-for="(el, i) in page"
       :key="i"
-      class="bg-white bg-cover bg-center rounded-2xl flex flex-col justify-end cursor-pointer hover:bg-blue-100 transition duration-500 shadow overflow-hidden"
-      :class="{ 'row-span-2 col-span-2 h-full': i === 0, 'h-96': i !== 0 }"
+      class="promoted"
+      :class="{ 'promoted-main': i === 0 }"
       :style="`background-image: url('${el.img}')`"
       @click="go(el.slug)"
     >
-      <div
-        class="flex-none p-4 rounded-b-2xl bg-white bg-opacity-75"
-        style="backdrop-filter: blur(1rem)"
-      >
-        <div class="mb-4">
+      <div class="promoted-description" style="backdrop-filter: blur(1rem)">
+        <div class="promoted-description-title">
           {{ el.title }}
         </div>
-        <div class="text-sm font-light tracking-wide max-h-20 overflow-hidden">
+        <div class="promoted-description-text">
           {{ el.description }}
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<style lang="scss">
+.promoted-wrapper {
+  @apply grid grid-cols-1 gap-10 h-full my-10 w-11/12 mx-auto;
+  @apply md:grid-cols-3 md:grid-rows-3 xl:w-2/3;
+
+  .promoted {
+    @apply bg-white bg-cover bg-center rounded-2xl cursor-pointer hover:bg-blue-100;
+    @apply transition duration-500 shadow overflow-hidden w-full h-0 pb-full relative;
+    @apply hover:ring hover:ring-blue-300;
+
+    &.promoted-main {
+      @apply sm:row-span-2 sm:col-span-2;
+    }
+
+    &-description {
+      @apply absolute bottom-0 p-4 rounded-b-2xl bg-white bg-opacity-75;
+
+      &-title {
+        @apply mb-4;
+      }
+
+      &-text {
+        @apply text-sm font-light tracking-wide max-h-20 overflow-hidden;
+      }
+    }
+  }
+}
+</style>
 
 <script>
 export default {

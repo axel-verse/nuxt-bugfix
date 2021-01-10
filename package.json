@@ -6,7 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js"
   },
@@ -17,8 +17,11 @@
     "nuxt": "^2.14.6"
   },
   "devDependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/tailwindcss": "^3.1.0",
     "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",

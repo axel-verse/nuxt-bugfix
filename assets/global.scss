@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'Saucer BB';
+  src: url('/fonts/subset-SaucerBB.eot');
+  src: local('Saucer BB'), local('SaucerBB'),
+  url('/fonts/subset-SaucerBB.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/subset-SaucerBB.woff2') format('woff2'),
+  url('/fonts/subset-SaucerBB.woff') format('woff'),
+  url('/fonts/subset-SaucerBB.ttf') format('truetype'),
+  url('/fonts/subset-SaucerBB.svg#SaucerBB') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+header,
+footer {
+  @apply h-12 p-4 bg-white;
+}
+
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.5s;

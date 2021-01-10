@@ -1,6 +1,6 @@
 ---
 title: Сложный сайт на NuxtJS. Часть 1
-promoted: true
+promoted: false
 img: /img/nuxt.svg
 ---
 

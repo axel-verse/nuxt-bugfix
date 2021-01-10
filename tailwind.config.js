@@ -5,13 +5,19 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      padding: {
+        full: '100%',
+      },
+    },
   },
   variants: {
     extend: {
       cursor: ['disabled'],
       textColor: ['disabled'],
       backgroundColor: ['disabled'],
+      ringColor: ['hover'],
+      ringWidth: ['hover'],
     },
   },
   plugins: [],
