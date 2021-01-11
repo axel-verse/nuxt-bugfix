@@ -1,6 +1,10 @@
 <template>
   <header>
-    <button class="header-nav-toggle" @click="toggleMobileNav">
+    <button
+      class="header-nav-toggle"
+      @click="toggleMobileNav"
+      @blur="onLoseNavFocus"
+    >
       <fa-icon icon="bars" />
     </button>
     <div class="header-logo">
@@ -68,6 +72,9 @@ export default {
   methods: {
     toggleMobileNav() {
       this.$store.commit('mobileNav/toggle')
+    },
+    onLoseNavFocus() {
+      this.$store.commit('mobileNav/close')
     },
   },
 }
