@@ -1,6 +1,6 @@
 <template>
   <header>
-    <button class="header-nav-toggle">
+    <button class="header-nav-toggle" @click="toggleMobileNav">
       <fa-icon icon="bars" />
     </button>
     <div class="header-logo">
@@ -9,17 +9,13 @@
         <h1 class="mr-auto">AXEL-VERSE.ML</h1>
       </nuxt-link>
     </div>
-    <div class="header-nav">
-      <nuxt-link to="/">ГЛАВНАЯ</nuxt-link>
-      <span>БЛОГ</span>
-      <span>ОБО МНЕ</span>
-    </div>
+    <av-blog-header-nav />
   </header>
 </template>
 
 <style lang="scss">
 header {
-  @apply flex items-center justify-between shadow sticky top-0 z-20 bg-white bg-opacity-75;
+  @apply flex items-center justify-between shadow sticky top-0 z-20 bg-white bg-opacity-75 h-12;
   backdrop-filter: blur(8px);
 
   .header-nav-toggle {
@@ -64,7 +60,15 @@ header {
 </style>
 
 <script>
+import AvBlogHeaderNav from '@/components/blog/layout/AvBlogHeaderNav'
+
 export default {
   name: 'AvBlogHeader',
+  components: { AvBlogHeaderNav },
+  methods: {
+    toggleMobileNav() {
+      this.$store.commit('mobileNav/toggle')
+    },
+  },
 }
 </script>

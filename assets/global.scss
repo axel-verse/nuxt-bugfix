@@ -19,9 +19,18 @@ footer {
 
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.5s;
+  @apply transition-all duration-500;
 }
 .page-enter,
 .page-leave-to {
-  opacity: 0;
+  @apply opacity-0;
+}
+
+.drop-down-nav-enter-active,
+.drop-down-nav-leave-active {
+  @apply transition-all duration-500;
+}
+.drop-down-nav-enter,
+.drop-down-nav-leave-to {
+  @apply transform -translate-y-full opacity-0 ease-linear;
 }

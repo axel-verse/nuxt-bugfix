@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <av-blog-header />
+    <av-blog-mobile-nav :is-mobile-nav-open="isMobileNavOpen" />
     <main>
       <transition name="page" mode="out-in" appear>
         <Nuxt :key="$route.fullPath" />
@@ -16,7 +17,7 @@
 <style lang="scss">
 .wrapper {
   @apply flex flex-col min-h-screen bg-gray-200;
-  background-image: url('/img/circuit-board.svg');
+  // background-image: url('/img/circuit-board.svg');
 
   main {
     @apply flex-1;
@@ -34,9 +35,10 @@
 
 <script>
 import AvBlogHeader from '@/components/blog/layout/AvBlogHeader'
+import AvBlogMobileNav from '@/components/blog/layout/AvBlogMobileNav'
 
 export default {
-  components: { AvBlogHeader },
+  components: { AvBlogMobileNav, AvBlogHeader },
   head: {
     titleTemplate: '%s - blog.axel-verse.ml',
   },
