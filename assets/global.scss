@@ -1,12 +1,9 @@
 @font-face {
   font-family: 'Saucer BB';
-  src: url('/fonts/subset-SaucerBB.eot');
-  src: local('Saucer BB'), local('SaucerBB'),
-  url('/fonts/subset-SaucerBB.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/subset-SaucerBB.woff2') format('woff2'),
-  url('/fonts/subset-SaucerBB.woff') format('woff'),
-  url('/fonts/subset-SaucerBB.ttf') format('truetype'),
-  url('/fonts/subset-SaucerBB.svg#SaucerBB') format('svg');
+  src: url('/fonts/hinted-subset-AVLogo.eot');
+  src: url('/fonts/hinted-subset-AVLogo.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/hinted-subset-AVLogo.woff2') format('woff2'),
+  url('/fonts/hinted-subset-AVLogo.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

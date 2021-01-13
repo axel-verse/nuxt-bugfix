@@ -3,12 +3,17 @@
     <div
       v-for="(el, i) in page"
       :key="i"
+      v-lazy-container="{ selector: 'img' }"
       class="promoted"
       :class="{ 'promoted-main': i === 0 }"
-      :style="`background-image: url('${el.img}')`"
       @click="go(el.slug)"
     >
-      <div class="promoted-description" style="backdrop-filter: blur(1rem)">
+      <img
+        class="object-cover absolute h-full w-full"
+        :src="el.img"
+        loading="lazy"
+      />
+      <div class="promoted-description">
         <div class="promoted-description-title">
           {{ el.title }}
         </div>
@@ -26,9 +31,9 @@
   @apply md:grid-cols-3 md:grid-rows-3 xl:w-2/3;
 
   .promoted {
-    @apply bg-white bg-cover bg-center rounded-2xl cursor-pointer hover:bg-blue-100;
-    @apply transition duration-500 shadow overflow-hidden w-full h-0 pb-full relative;
-    @apply hover:ring hover:ring-blue-300;
+    @apply bg-white rounded-2xl cursor-pointer hover:bg-blue-100 relative;
+    @apply transition duration-500 shadow overflow-hidden w-full h-0 pb-full;
+    @apply hover:ring hover:ring-blue-300 relative;
 
     &.promoted-main {
       @apply sm:row-span-2 sm:col-span-2;
@@ -36,6 +41,7 @@
 
     &-description {
       @apply absolute bottom-0 p-4 rounded-b-2xl bg-white bg-opacity-75;
+      backdrop-filter: blur(1rem);
 
       &-title {
         @apply mb-4;
@@ -71,8 +77,15 @@ export default {
       this.$router.push(`/posts/${slug}`)
     },
   },
-  head: {
-    title: 'Блог',
+  head() {
+    return {
+      title: 'Блог',
+      link: this.pageContent
+        ? this.pageContent.map((el) => {
+            return { rel: 'preload', href: el.img, as: 'image' }
+          })
+        : null,
+    }
   },
 }
 </script>

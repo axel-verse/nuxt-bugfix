@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <av-blog-header />
-    <av-blog-mobile-nav :is-mobile-nav-open="isMobileNavOpen" />
+    <av-blog-mobile-nav />
     <main>
       <transition name="page" mode="out-in" appear>
         <Nuxt :key="$route.fullPath" />

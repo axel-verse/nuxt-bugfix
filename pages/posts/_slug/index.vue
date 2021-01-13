@@ -1,6 +1,11 @@
 <template>
   <div v-if="post" class="post">
-    <div class="post-img" :style="`background-image: url('${post.img}')`">
+    <div class="post-img">
+      <img
+        :src="post.img"
+        class="h-full w-full absolute object-cover"
+        loading="lazy"
+      />
       <div class="post-img-heading">
         <h2 class="">{{ post.title }}</h2>
       </div>
@@ -26,7 +31,7 @@
   @apply sm:mb-10;
 
   &-img {
-    @apply h-96 w-full bg-cover bg-center bg-white flex items-center shadow;
+    @apply h-96 w-full relative bg-white flex items-center shadow;
     @apply sm:mb-10;
 
     &-heading {
