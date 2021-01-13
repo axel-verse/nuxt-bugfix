@@ -54,9 +54,10 @@ header {
 
     span,
     a {
+      @apply font-light tracking-wide;
+
       &:not(:last-child) {
-        @apply font-light tracking-wide mr-4;
-        @apply lg:mr-12;
+        @apply mr-4 lg:mr-12;
       }
     }
   }

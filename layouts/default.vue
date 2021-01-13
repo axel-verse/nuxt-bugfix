@@ -8,8 +8,14 @@
       </transition>
     </main>
     <footer>
-      &copy; <nuxt-link to="/">axel-verse.ml</nuxt-link>, 2021. Made with
-      <a href="https://nuxtjs.org" target="_blank">NuxtJS</a>
+      <p>
+        &copy; <nuxt-link to="/">axel-verse.ml</nuxt-link>, 2021
+        <template v-if="copyYear !== '2021'"> - {{ copyYear }} </template>
+      </p>
+      <p>
+        Made with
+        <a href="https://nuxtjs.org" target="_blank">NuxtJS</a>
+      </p>
     </footer>
   </div>
 </template>
@@ -25,6 +31,7 @@
 
   footer {
     @apply text-center text-xs tracking-wide text-gray-700 font-light;
+    @apply flex flex-col  items-center justify-center;
 
     a {
       @apply font-medium underline uppercase;
@@ -39,6 +46,11 @@ import AvBlogMobileNav from '@/components/blog/layout/AvBlogMobileNav'
 
 export default {
   components: { AvBlogMobileNav, AvBlogHeader },
+  computed: {
+    copyYear() {
+      return this.$moment(new Date()).format('YYYY')
+    },
+  },
   head: {
     titleTemplate: '%s - blog.axel-verse.ml',
   },

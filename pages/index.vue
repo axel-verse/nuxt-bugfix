@@ -3,7 +3,6 @@
     <div
       v-for="(el, i) in page"
       :key="i"
-      v-lazy-container="{ selector: 'img' }"
       class="promoted"
       :class="{ 'promoted-main': i === 0 }"
       @click="go(el.slug)"
