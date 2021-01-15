@@ -1,15 +1,15 @@
 <template>
   <div v-if="post" class="post">
     <div class="post-img">
-      <picture class="h-96 w-full absolute object-cover" loading="lazy">
-        <source
-          v-for="bp in bpList"
-          :key="bp.title"
-          :media="`(min-width: ${bp.minWidth})`"
-          :srcset="`/img/blog/article/${bp.title}/${post.img}`"
-        />
-        <img :src="`/img/blog/${post.img}`" :alt="post.title" />
-      </picture>
+      <nuxt-picture
+        class="h-full w-full"
+        width="100%"
+        height="24rem"
+        :src="`/img/blog/${post.img}`"
+        :placeholder="true"
+        fit="cover"
+        sizes="586,768:768,1024:1024,1280:1280,1536:1536,1900:1900"
+      />
       <div class="post-img-heading">
         <h2 class="">{{ post.title }}</h2>
       </div>
@@ -35,11 +35,11 @@
   @apply sm:mb-10;
 
   &-img {
-    @apply h-96 w-full relative bg-white flex items-center shadow;
+    @apply h-96 w-full bg-white shadow relative overflow-hidden;
     @apply sm:mb-10;
 
     &-heading {
-      @apply p-4 bg-white bg-opacity-75 w-full text-center shadow;
+      @apply p-4 bg-white bg-opacity-75 w-full text-center shadow absolute top-1/2 transform -translate-y-1/2;
       backdrop-filter: blur(8px);
 
       h2 {

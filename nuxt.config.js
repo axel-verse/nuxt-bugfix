@@ -61,9 +61,9 @@ export default {
       { rel: 'shortcut icon', href: '/img/favicons/favicon.ico' },
       {
         rel: 'preload',
-        href: '/fonts/stylesheet.css',
-        as: 'style',
-        onLoad: "this.onload=null;this.rel='stylesheet'",
+        href: '/img/logo.svg',
+        as: 'image',
+        type: 'image/svg+xml',
       },
     ],
   },
@@ -85,6 +85,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome',
     '@nuxtjs/moment',
+    '@nuxt/image',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -116,5 +117,9 @@ export default {
     defaultLocale: 'ru',
     defaultTimezone: 'Europe/Moscow',
     locales: ['ru'],
+  },
+
+  render: {
+    asyncScripts: true,
   },
 }

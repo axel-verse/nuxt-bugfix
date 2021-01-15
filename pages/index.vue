@@ -7,17 +7,18 @@
       :class="{ 'promoted-main': i === 0 }"
       @click="go(el.slug)"
     >
-      <picture class="object-cover absolute h-full w-full" loading="lazy">
-        <source
-          v-for="bp in bpList"
-          :key="bp.title"
-          :media="`(min-width: ${bp.minWidth})`"
-          :srcset="`/img/blog/${bp.title}${
-            i === 0 && bp.title !== 'sm' ? '/promoted' : ''
-          }/${el.img}`"
-        />
-        <img :src="`/img/blog/${el.img}`" :alt="el.title" />
-      </picture>
+      <nuxt-picture
+        width="100%"
+        height="100%"
+        :src="`/img/blog/square/${el.img}`"
+        :placeholder="true"
+        fit="cover"
+        :sizes="
+          i === 0
+            ? '586,768:456,1024:613,1280:555,1536:670,1900:831'
+            : '586,768:228,1024:307,1280:228,1536:335,1900:416'
+        "
+      />
       <div class="promoted-description">
         <div class="promoted-description-title">
           {{ el.title }}
