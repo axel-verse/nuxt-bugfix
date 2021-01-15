@@ -1,11 +1,15 @@
 <template>
   <div v-if="post" class="post">
     <div class="post-img">
-      <img
-        :src="post.img"
-        class="h-full w-full absolute object-cover"
-        loading="lazy"
-      />
+      <picture class="h-96 w-full absolute object-cover" loading="lazy">
+        <source
+          v-for="bp in bpList"
+          :key="bp.title"
+          :media="`(min-width: ${bp.minWidth})`"
+          :srcset="`/img/blog/article/${bp.title}/${post.img}`"
+        />
+        <img :src="`/img/blog/${post.img}`" :alt="post.title" />
+      </picture>
       <div class="post-img-heading">
         <h2 class="">{{ post.title }}</h2>
       </div>
@@ -80,6 +84,11 @@ export default {
         redirect(302, '/')
       })
     return { post: pageContent }
+  },
+  computed: {
+    bpList() {
+      return this.$store.state.breakpoints.bpList
+    },
   },
   head() {
     return {

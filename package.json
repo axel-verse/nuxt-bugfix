@@ -7,6 +7,9 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist",
+    "generate:modern": "nuxt generate --modern && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist",
+    "generate-deploy": "nuxt generate && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist && mcli cp -r dist/ prod/blog/",
+    "generate-deploy:modern": "nuxt generate --modern && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist && mcli cp -r dist/ prod/blog/",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js"
   },

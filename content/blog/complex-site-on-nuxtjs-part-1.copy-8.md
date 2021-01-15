@@ -1,7 +1,7 @@
 ---
 title: Сложный сайт на NuxtJS. Часть 1 - Проверочная
 promoted: true
-img: /img/blog/9.webp
+img: 9.webp
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies quam mi, vel tincidunt lectus vulputate condimentum. Etiam facilisis ligula lorem, at dapibus lectus cursus nec. Nulla tincidunt lacinia convallis. Maecenas rhoncus, ligula in pellentesque pulvinar, justo tortor maximus metus, a euismod urna ipsum vitae erat. Mauris et purus ipsum. Suspendisse potenti. Nam sollicitudin sem et mauris pretium, ac aliquet arcu fringilla. In vitae luctus augue. Fusce dictum vehicula sapien. Quisque bibendum nulla et urna rhoncus, ac hendrerit mauris pulvinar. Curabitur sit amet fermentum leo. Nam rhoncus nulla vitae lacus efficitur, nec convallis ipsum aliquam. Integer ornare risus nec odio tincidunt fringilla. Integer eu feugiat sem. Proin finibus sagittis neque, vitae imperdiet urna malesuada in. Vestibulum cursus dui sed nunc pulvinar pulvinar.

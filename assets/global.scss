@@ -1,14 +1,3 @@
-@font-face {
-  font-family: 'Saucer BB';
-  src: url('/fonts/hinted-subset-AVLogo.eot');
-  src: url('/fonts/hinted-subset-AVLogo.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/hinted-subset-AVLogo.woff2') format('woff2'),
-  url('/fonts/hinted-subset-AVLogo.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 header,
 footer {
   @apply h-12 p-4 bg-white;

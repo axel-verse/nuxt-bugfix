@@ -7,11 +7,17 @@
       :class="{ 'promoted-main': i === 0 }"
       @click="go(el.slug)"
     >
-      <img
-        class="object-cover absolute h-full w-full"
-        :src="el.img"
-        loading="lazy"
-      />
+      <picture class="object-cover absolute h-full w-full" loading="lazy">
+        <source
+          v-for="bp in bpList"
+          :key="bp.title"
+          :media="`(min-width: ${bp.minWidth})`"
+          :srcset="`/img/blog/${bp.title}${
+            i === 0 && bp.title !== 'sm' ? '/promoted' : ''
+          }/${el.img}`"
+        />
+        <img :src="`/img/blog/${el.img}`" :alt="el.title" />
+      </picture>
       <div class="promoted-description">
         <div class="promoted-description-title">
           {{ el.title }}
@@ -70,6 +76,11 @@ export default {
       .limit(6)
       .fetch()
     return { page: pageContent }
+  },
+  computed: {
+    bpList() {
+      return this.$store.state.breakpoints.bpList
+    },
   },
   methods: {
     go(slug) {

@@ -59,6 +59,12 @@ export default {
         color: '#00aba9',
       },
       { rel: 'shortcut icon', href: '/img/favicons/favicon.ico' },
+      {
+        rel: 'preload',
+        href: '/fonts/stylesheet.css',
+        as: 'style',
+        onLoad: "this.onload=null;this.rel='stylesheet'",
+      },
     ],
   },
 
