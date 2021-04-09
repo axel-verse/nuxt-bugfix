@@ -122,4 +122,8 @@ export default {
   render: {
     asyncScripts: true,
   },
+
+  generate: {
+    fallback: '404.html',
+  },
 }
