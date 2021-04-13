@@ -13,9 +13,23 @@
         <img src="/img/logo.svg" alt="AXEL-VERSE.ML" class="large-logo" />
       </nuxt-link>
     </div>
-    <av-blog-header-nav />
+    <blog-layout-av-blog-header-nav />
   </header>
 </template>
+
+<script>
+export default {
+  name: 'AvBlogHeader',
+  methods: {
+    toggleMobileNav() {
+      this.$store.commit('mobileNav/toggle')
+    },
+    onLoseNavFocus() {
+      this.$store.commit('mobileNav/close')
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 header {
@@ -67,20 +81,3 @@ header {
   }
 }
 </style>
-
-<script>
-import AvBlogHeaderNav from '@/components/blog/layout/AvBlogHeaderNav'
-
-export default {
-  name: 'AvBlogHeader',
-  components: { AvBlogHeaderNav },
-  methods: {
-    toggleMobileNav() {
-      this.$store.commit('mobileNav/toggle')
-    },
-    onLoseNavFocus() {
-      this.$store.commit('mobileNav/close')
-    },
-  },
-}
-</script>

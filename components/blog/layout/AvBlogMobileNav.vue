@@ -1,10 +1,22 @@
 <template>
   <transition name="drop-down-nav">
     <nav v-if="isMobileNavOpen" class="mobile-nav">
-      <av-blog-header-nav />
+      <blog-layout-av-blog-header-nav />
     </nav>
   </transition>
 </template>
+
+<script>
+export default {
+  name: 'AvBlogMobileNav',
+  transition: 'drop-down-nav',
+  computed: {
+    isMobileNavOpen() {
+      return this.$store.state.mobileNav.status
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .mobile-nav {
@@ -21,15 +33,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  name: 'AvBlogMobileNav',
-  computed: {
-    isMobileNavOpen() {
-      return this.$store.state.mobileNav.status
-    },
-  },
-  transition: 'drop-down-nav',
-}
-</script>

@@ -2,11 +2,12 @@
   <div v-if="post" class="post">
     <div class="post-img">
       <nuxt-picture
-        class="h-full w-full"
+        class="h-96 w-full"
         width="100%"
         height="24rem"
         :src="`/img/blog/${post.img}`"
         :placeholder="true"
+        loading="lazy"
         fit="cover"
         sizes="586,768:768,1024:1024,1280:1280,1536:1536,1900:1900"
       />
@@ -85,11 +86,6 @@ export default {
       })
     return { post: pageContent }
   },
-  computed: {
-    bpList() {
-      return this.$store.state.breakpoints.bpList
-    },
-  },
   head() {
     return {
       title: this.post && this.post.title ? this.post.title : null,
@@ -102,6 +98,11 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    bpList() {
+      return this.$store.state.breakpoints.bpList
+    },
   },
 }
 </script>

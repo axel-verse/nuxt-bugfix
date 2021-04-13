@@ -12,6 +12,7 @@
         height="100%"
         :src="`/img/blog/square/${el.img}`"
         :placeholder="true"
+        loading="lazy"
         fit="cover"
         :sizes="
           i === 0
@@ -30,6 +31,41 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  beforeRouteEnter(to, from, next) {
+    if (to.query && to.query.page && to.query.page === '1') {
+      next('/')
+    }
+
+    next()
+  },
+  async asyncData({ $content }) {
+    const pageContent = await $content('blog')
+      .where({ promoted: true })
+      .sortBy('createdAt', 'desc')
+      .limit(6)
+      .fetch()
+    return { page: pageContent }
+  },
+  head() {
+    return {
+      title: 'Блог',
+    }
+  },
+  computed: {
+    bpList() {
+      return this.$store.state.breakpoints.bpList
+    },
+  },
+  methods: {
+    go(slug) {
+      this.$router.push(`/posts/${slug}`)
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .promoted-wrapper {
@@ -60,43 +96,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  beforeRouteEnter(to, from, next) {
-    if (to.query && to.query.page && to.query.page === '1') {
-      next('/')
-    }
-
-    next()
-  },
-  async asyncData({ $content, route }) {
-    const pageContent = await $content('blog')
-      .where({ promoted: true })
-      .sortBy('createdAt', 'desc')
-      .limit(6)
-      .fetch()
-    return { page: pageContent }
-  },
-  computed: {
-    bpList() {
-      return this.$store.state.breakpoints.bpList
-    },
-  },
-  methods: {
-    go(slug) {
-      this.$router.push(`/posts/${slug}`)
-    },
-  },
-  head() {
-    return {
-      title: 'Блог',
-      link: this.pageContent
-        ? this.pageContent.map((el) => {
-            return { rel: 'preload', href: el.img, as: 'image' }
-          })
-        : null,
-    }
-  },
-}
-</script>

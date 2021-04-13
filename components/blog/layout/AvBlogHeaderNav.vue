@@ -5,9 +5,3 @@
     <span>ОБО МНЕ</span>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'AvBlogHeaderNav',
-}
-</script>

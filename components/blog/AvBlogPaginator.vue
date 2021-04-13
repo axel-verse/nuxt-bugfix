@@ -8,12 +8,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-button {
-  @apply disabled:cursor-not-allowed disabled:text-gray-300 disabled:bg-gray-500;
-}
-</style>
-
 <script>
 export default {
   name: 'AvBlogPaginator',
@@ -68,3 +62,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+button {
+  @apply disabled:cursor-not-allowed disabled:text-gray-300 disabled:bg-gray-500;
+}
+</style>

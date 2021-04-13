@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <av-blog-header />
-    <av-blog-mobile-nav />
+    <blog-layout-av-blog-header />
+    <blog-layout-av-blog-mobile-nav />
     <main>
       <transition name="page" mode="out-in" appear>
         <Nuxt :key="$route.fullPath" />
@@ -19,6 +19,19 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  head: {
+    titleTemplate: '%s - blog.axel-verse.ml',
+  },
+  computed: {
+    copyYear() {
+      return this.$moment(new Date()).format('YYYY')
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .wrapper {
@@ -39,20 +52,3 @@
   }
 }
 </style>
-
-<script>
-import AvBlogHeader from '@/components/blog/layout/AvBlogHeader'
-import AvBlogMobileNav from '@/components/blog/layout/AvBlogMobileNav'
-
-export default {
-  components: { AvBlogMobileNav, AvBlogHeader },
-  computed: {
-    copyYear() {
-      return this.$moment(new Date()).format('YYYY')
-    },
-  },
-  head: {
-    titleTemplate: '%s - blog.axel-verse.ml',
-  },
-}
-</script>
