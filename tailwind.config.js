@@ -6,18 +6,16 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
-      padding: {
-        full: '100%',
+      spacing: {
+        1000: '1000px',
       },
     },
   },
   variants: {
     extend: {
-      cursor: ['disabled'],
-      textColor: ['disabled'],
-      backgroundColor: ['disabled'],
-      ringColor: ['hover'],
-      ringWidth: ['hover'],
+      fontWeight: ['first'],
+      margin: ['first'],
+      textTransform: ['first'],
     },
   },
   plugins: [],

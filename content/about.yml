@@ -1,0 +1,74 @@
+first_name: Александр
+muddle_name: Витальевич
+last_name: Мудров
+birth_date: 1984-10-19
+profession: IT-специалист
+avatar:
+  - dir: /img/avatar
+    image: avatar.webp
+    fallback: avatar.jpg
+education:
+  - school:
+      - number: 838
+        start_date: 1990
+        end_date: 1995
+      - number: 906
+        start_date: 1995
+        end_date: 2002
+  - high_school:
+      - name: НИТУ МИСиС
+        faculty: Цветных и драгоценных металлов
+        start_date: 2002
+        end_date: 2007
+occupation:
+  - company: ООО "ХИРШ - Таганское"
+    position: IT-специалист
+    start_date: 2005-06
+    end_date: 2007-08
+  - company: ООО "Геометрика недвижимости"
+    position: IT-специалист
+    start_date: 2011-09
+    end_date: 2011-12
+  - company: ООО "Спринт-Мастер"
+    position: Сервис-инженер
+    start_date: 2012-02-01
+    end_date: 2012-04-01
+  - company: ООО "Земли Московии"
+    position: IT-специалист
+    start_date: 2013-02-09
+    end_date: 2013-02-28
+  - company: ООО "ТехноАльянс"
+    position: IT-специалист
+    start_date: 2013-08-08
+    end_date: 2013-12-01
+  - company: ООО "СТЗ"
+    position: Генеральный директор
+    start_date: 2013-02-26
+    end_date: 2014-02-01
+  - company: ООО "СоТехС"
+    position: Web-программист, Web-мастер
+    start_date: 2013-09-15
+    end_date: 2014-02-02
+  - company: ООО "СоТехС"
+    position: администратор ЛВС
+    start_date: 2014-02-02
+    end_date: 2014-09-01
+  - company: УК "Восток"
+    position: Ведущий системный администратор
+    start_date: 2015-02-19
+    end_date: 2015-11-03
+  - company: ООО "АвиаПартнёр"
+    position: Генеральный директор
+    start_date: 2015-11-18
+    end_date: 2016-28-12
+  - company: Jobmens.RU
+    position: Web-программист, Web-мастер
+    start_date: 2017-02-14
+    end_date: 2019-04-24
+  - company: АО "МЕГАНЕТ"
+    position: Web-программист
+    start_date: 2019-08-28
+    end_date:
+about: A lot of information that we want to post
+
+  A very-very lot of information
