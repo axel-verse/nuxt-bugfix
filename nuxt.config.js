@@ -7,6 +7,15 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    htmlAttrs: {
+      lang: 'ru',
+      once: true,
+    },
+    titleTemplate: (title) => {
+      return title
+        ? `${title} | Разработка сайтов любой сложности - AXEL_VERSE`
+        : 'Разработка сайтов любой сложности - AXEL_VERSE'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -55,6 +64,7 @@ export default {
     suffix: true,
     icons: {
       solid: ['faBars', 'faHeart'],
+      brands: ['faJs', 'faPhp', 'faPython'],
     },
   },
 

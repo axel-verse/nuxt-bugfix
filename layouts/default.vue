@@ -12,6 +12,10 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+
+  .prose {
+    @apply max-w-full;
+  }
 }
 
 .page-enter-active,

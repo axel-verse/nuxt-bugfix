@@ -18,5 +18,5 @@ module.exports = {
       textTransform: ['first'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
