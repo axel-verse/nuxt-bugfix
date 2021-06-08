@@ -39,19 +39,19 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome',
-    '@nuxtjs/moment',
+    // '@nuxtjs/moment',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    // '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  // axios: {},
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
@@ -63,16 +63,16 @@ export default {
     component: 'Fa',
     suffix: true,
     icons: {
-      solid: ['faBars', 'faHeart'],
+      solid: ['faBars', 'faHeart', 'faArrowLeft'],
       brands: ['faJs', 'faPhp', 'faPython'],
     },
   },
 
-  moment: {
+  /* moment: {
     defaultLocale: 'ru',
     defaultTimezone: 'Europe/Moscow',
     locales: ['ru'],
-  },
+  }, */
 
   render: {
     asyncScripts: true,

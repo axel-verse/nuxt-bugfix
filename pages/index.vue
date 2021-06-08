@@ -3,8 +3,12 @@
     <section class="min-h-screen bg-black">
       <fullscreen-slide>
         <p>Web-дизайнер, web-программист</p>
-        <h1 class="mb-8">Александр "axel_verse" Мудров</h1>
-        <p>Визитка и примеры работ</p>
+        <h1 class="mt-4 mb-6">
+          Александр
+          <span class="hidden">"axel_verse"</span>
+          Мудров
+        </h1>
+        <p>Разработка сайтов любой сложности</p>
       </fullscreen-slide>
     </section>
 
@@ -31,4 +35,9 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.frontend,
+.backend {
+  @apply bg-white;
+}
+</style>
