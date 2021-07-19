@@ -4,14 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "nuxt build --modern",
     "start": "nuxt start",
-    "generate": "nuxt generate && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist",
-    "generate:modern": "nuxt generate --modern && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist",
-    "generate:valet": "nuxt generate && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist && rsync ./dist/ ~/Dev/valet/blog -cavP",
-    "generate:valet:modern": "nuxt generate --modern && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist && rsync ./dist/ ~/Dev/valet/blog -cavP",
-    "generate:deploy": "nuxt generate && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist && mcli cp -r dist/ prod/blog/",
-    "generate:deploy:modern": "nuxt generate --modern && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,svg,woff2,woff,ico,txt ./dist && mcli cp -r dist/ prod/blog/",
+    "generate": "nuxt generate && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,woff2,woff,ico,txt ./dist",
+    "generate:valet": "nuxt generate && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,woff2,woff,ico,txt ./dist && rsync ./dist/ ~/Dev/valet/blog -cavP",
+    "generate:deploy": "nuxt generate && npx gzipper c -v --level 9 -e nojekyll,jpg,jpeg,webp,png,woff2,woff,ico,txt ./dist && mcli cp -r dist/ prod/blog/",
     "lint:js": "eslint --ext .js,.vue,.json,.md --ignore-path .gitignore .",
     "lint": "yarn lint:js"
   },
@@ -41,9 +38,10 @@
     "eslint-plugin-prettier": "^3.3.1",
     "gzipper": "^4.4.0",
     "postcss": "^8.2.10",
+    "postcss-easy-import": "^3.0.0",
     "prettier": "^2.2.1",
-    "sass": "^1.32.8",
+    "sass": "^1.35.2",
     "sass-loader": "^10.2.0",
-    "tailwindcss": "^2.1.4"
+    "tailwindcss": "^2.2.4"
   }
 }

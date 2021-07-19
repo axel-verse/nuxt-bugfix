@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="error">
     <h1 v-if="error.statusCode === 404">Страница не найдена</h1>
     <h1 v-else>Произошла ошибка</h1>
     <NuxtLink to="/">
@@ -14,17 +14,3 @@ export default {
   props: ['error'],
 }
 </script>
-
-<style scoped lang="scss">
-article {
-  @apply flex flex-col justify-center items-center min-h-screen;
-
-  h1 {
-    @apply font-medium mb-4 text-4xl;
-  }
-
-  a {
-    @apply uppercase hover:underline;
-  }
-}
-</style>

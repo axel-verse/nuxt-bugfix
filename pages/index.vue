@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="index">
     <section class="min-h-screen bg-black">
       <fullscreen-slide>
         <p>Web-дизайнер, web-программист</p>
@@ -34,10 +34,3 @@ export default {
   },
 }
 </script>
-
-<style scoped lang="scss">
-.frontend,
-.backend {
-  @apply bg-white;
-}
-</style>

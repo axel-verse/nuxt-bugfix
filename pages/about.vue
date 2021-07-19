@@ -1,5 +1,7 @@
 <template>
-  <pre>{{ page }}</pre>
+  <article class="pt-32 about">
+    <pre>{{ page }}</pre>
+  </article>
 </template>
 
 <script>
